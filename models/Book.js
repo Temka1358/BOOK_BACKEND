@@ -1,4 +1,3 @@
-const { Double } = require('mongodb');
 const mongoose = require('mongoose')
 const Schema = mongoose.Schema;
 
@@ -6,6 +5,18 @@ const BookSchema = new Schema({
     name :{
         type: String,
         required:[true, 'Enter name of the book!']
+    },
+    code: {
+        type: String,
+        required: [true, "Enter code of the book!"]
+    },
+    price:{
+        type: Number,
+        required: [true, "Enter price of the book!"]
+    },
+    author: {
+        type: String,
+        required:[true, 'Enter author of the book!']
     },
     ISBN:{
         type: Number,
@@ -16,13 +27,9 @@ const BookSchema = new Schema({
             message: '{VALUE} is not an integer value'
         }
     },
-    price:{
-        type: Number,
-        required: [true, "Enter price of the book!"]
-    },
-    author: {
+    publisher: {
         type: String,
-        required:[true, 'Enter author of the book!']
+        required: [true, 'Enter published of the book!']
     },
     published_date:{
         type: Date,

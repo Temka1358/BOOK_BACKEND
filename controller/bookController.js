@@ -15,7 +15,7 @@ const insertBook = (req, res)=>{
         .catch(err=> res.json({success: false, error: err}))
 }
 const updateBook = (req, res)=>{
-    Book.findByIdAndUpdate(req.body._id, req.body, (err, data)=>{
+    Book.findByIdAndUpdate(req.body.id, req.body, (err, data)=>{
         if (err) {res.json({success: false, error: err})}
         else{
             res.json({success: true, data: data})
@@ -23,7 +23,7 @@ const updateBook = (req, res)=>{
     } )
 }
 const deleteBook = (req, res) => {
-    Book.findByIdAndDelete(req.body._id, (err, data)=>{
+    Book.findByIdAndDelete(req.body.id, (err, data)=>{
         if(err) {res.json({success: false, error: err})}
         else { res.json({success: true, data: data}) }
     })
